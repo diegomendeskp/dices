@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+import {useState, useEffect} from 'react'
 import './App.css';
-
+import axios from 'axios';
 function App() {
+  const [dices, setDices] = useState([])
+useEffect(() => {
+    axios.get('https://murmuring-fortress-22740.herokuapp.com/dices' )
+    
+    .then((data) => {
+      setDices(data.dices) 
+    })
+}, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ul className="dices">
+    {dices.map((dice) => <li key={dice._id}>{dice.playerName} rolou um d{dice.diceType} e tirou um {dice.diceValue}</li>)}
+  </ul>
   );
 }
 
