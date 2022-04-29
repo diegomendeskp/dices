@@ -6,8 +6,8 @@ function App() {
 useEffect(() => {
     axios.get('https://murmuring-fortress-22740.herokuapp.com/dices' )
     
-    .then((data) => {
-      setDices(data.dices) 
+    .then((response) => {
+      setDices(response.data.dices) 
     })
 }, [])
   return (
