@@ -51,7 +51,7 @@ const Popup = () => {
             </div>
 
             <div className='field'>
-                <label htmlFor='confirmPassword'>Comfirmar Senha</label>
+                <label htmlFor='confirmPassword'>Confirmar Senha</label>
                 <input type='password' name='confirmPassword' id='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmpassword(e.target.value)} />
             </div>
 
