@@ -1,0 +1,67 @@
+#cadastro{
+    display: none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height: 50vh;
+    padding: 0 2rem;
+    
+}
+#cadastro .form-cadastro{
+    opacity: 0.8;
+    filter: alpha(opacity=50);
+    background-color: #2E8B57;
+    width: 100%;
+    max-width: 480px;
+    padding: 0.5rem;
+    border-radius: 15px;
+    
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0 2rem;
+    background: #FFFFFF url("taverna.jpg") no-repeat right center fixed;
+    
+}
+
+#login .form{
+    opacity: 0.7;
+    filter: alpha(opacity=50);
+    background-color: #3CB371;
+    width: 100%;
+    max-width: 480px;
+    padding: 0.5rem;
+    border-radius: 15px;
+    
+}
+.form:hover {
+    
+    
+  }
+
+#login .field{
+    padding-bottom: 0.5rem;
+}
+
+#login .field label{
+    display: block;
+    
+}
+
+#login .field input{
+    width: 100%;
+    border-radius: 5px;
+}
+
+#login .actions{
+    text-align: center;
+    margin-top: 0.5rem;
+}
+#login .botao{
+    border-radius: 5px;
+}
