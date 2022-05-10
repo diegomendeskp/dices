@@ -4,19 +4,28 @@ import React, {useState, useEffect} from 'react'
 
 const Popup = () => {
   
-  const [newUsername, setNewusername] = useState("");
-    const [newPassword, setNewpassword] = useState("");
-    const [newNickname, setNewnickname] = useState("");
+  const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
+    const [playerName, setPlayerName] = useState("");
     const [confirmPassword, setConfirmpassword] = useState("");
    
     const handleSubmit2 = (e) => {
-      if(newUsername !== "" && newNickname !== "" && newPassword !== "" && confirmPassword !== ""){
-      
-      console.log('submit', newUsername, newNickname, newPassword, confirmPassword);
-    }else{ alert('ops... esta faltando algo.')
+     
 
-  };
+      
   e.preventDefault();
+  fetch("https://murmuring-fortress-22740.herokuapp.com/users", {
+    method: "POST",
+    body: JSON.stringify({ userName: userName,playerName:playerName, password: password }),
+    headers: { "Content-type": "application/json" },
+  }).then((res) => {
+    if (res.status != 200) {
+      throw new Error("Bad server response");
+    }
+    return res.json();
+  }).then((res)=>console.log(res)).catch((error)=>console.error(error));
+  console.log("submit", userName,playerName, password);
+
   };
 
 
@@ -36,18 +45,18 @@ const Popup = () => {
 
       <form className='form-cadastro'>
       <div className='field'>
-                <label htmlFor='newUsername'>Usuario</label>
-                <input type='text' name='newUsername' id='newUsername' value={newUsername} onChange={(e) => setNewusername(e.target.value)} />
+                <label htmlFor='userName'>Usuario</label>
+                <input type='text' name='userName' id='userName' value={userName} onChange={(e) => setUserName(e.target.value)} />
             </div>
 
             <div className='field'>
-                <label htmlFor='newNickname'>Apelido</label>
-                <input type='text' name='newNickname' id='newNickname' value={newNickname} onChange={(e) => setNewnickname(e.target.value)} />
+                <label htmlFor='playerName'>Apelido</label>
+                <input type='text' name='playerName' id='playerName' value={playerName} onChange={(e) => setPlayerName(e.target.value)} />
             </div>
 
             <div className='field'>
-                <label htmlFor='newPassword'>Senha</label>
-                <input type='password' name='newPassword' id='newPassword' value={newPassword} onChange={(e) => setNewpassword(e.target.value)} />
+                <label htmlFor='password'>Senha</label>
+                <input type='password' name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
 
             <div className='field'>
