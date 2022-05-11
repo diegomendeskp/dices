@@ -42,7 +42,9 @@ const Popup = () => {
 
     <div id='cadastro'>
       <h1 className='title'>Cadastro</h1>
-
+      <main className="container2">
+        <div className="card2">
+          <div className="conteudo2">
       <form className='form-cadastro'>
       <div className='field'>
                 <label htmlFor='userName'>Usuario</label>
@@ -71,7 +73,9 @@ const Popup = () => {
         
             </div>
          </form>
-           
+         </div>
+        </div>
+      </main>
 
     </div>
        
