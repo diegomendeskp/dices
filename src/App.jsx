@@ -1,19 +1,49 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./App.css";
 import axios from "axios";
 import HomePage from "./pags/homepag";
 import LoginPage from "./pags/loginpag";
-
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Popup from "./pags/popup/popup";
+import {
+  SweetAlertIcon,
+  SweetAlertOptions,
+  SweetAlertResult,
+} from "sweetalert2";
+import swal from "sweetalert2";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  Link,
+} from "react-router-dom";
+import { AuthProvider, AuthContext } from "./pags/context/Auth";
+import { useJwt } from "react-jwt";
 
 function App() {
+  const Private = ({ children }) => {
+    const { authenticated } = useContext(AuthContext);
+    if (!authenticated) {
+      return <Navigate to="/" />;
+    }
+    return children;
+  };
   return (
     <div className="app">
       <Router>
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/home" element={<HomePage />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route
+              path="/home"
+              element={
+                <Private>
+                  <HomePage />
+                </Private>
+              }
+            />
+          </Routes>
+        </AuthProvider>
       </Router>
     </div>
   );

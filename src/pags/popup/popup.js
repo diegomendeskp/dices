@@ -1,30 +1,56 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
+
+import  {SweetAlertIcon, SweetAlertOptions, SweetAlertResult } from 'sweetalert2'
+import { AuthContext } from '../context/Auth'
+import Swal from 'sweetalert2/src/sweetalert2.js'
+import { useJwt } from "react-jwt";
+
+
 
 
 
 const Popup = () => {
-  
+
   const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [playerName, setPlayerName] = useState("");
     const [confirmPassword, setConfirmpassword] = useState("");
    
     const handleSubmit2 = (e) => {
-     
+      e.preventDefault();
+        if (password != confirmPassword) {
+          
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Senha diferente',
+          })
+    
+        }else{
+         
 
-      
-  e.preventDefault();
-  fetch("https://murmuring-fortress-22740.herokuapp.com/users", {
-    method: "POST",
-    body: JSON.stringify({ userName: userName,playerName:playerName, password: password }),
-    headers: { "Content-type": "application/json" },
-  }).then((res) => {
-    if (res.status != 200) {
-      throw new Error("Bad server response");
-    }
-    return res.json();
-  }).then((res)=>console.log(res)).catch((error)=>console.error(error));
-  console.log("submit", userName,playerName, password);
+        
+   
+    
+    fetch("https://murmuring-fortress-22740.herokuapp.com/users", {
+      method: "POST",
+      body: JSON.stringify({ userName: userName,playerName:playerName, password: password }),
+      headers: { "Content-type": "application/json" },
+    }).then((res) => {
+      if (res.status != 200) {
+        throw new Error("Bad server response");
+      }
+      return res.json();
+    }).then((res)=>console.log(res)).catch((error)=>console.error(error));
+    Swal.fire({
+      position: 'top-center',
+      icon: 'success',
+      title: 'Login Cadastrado',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  
+  }
 
   };
 
