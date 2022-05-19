@@ -38,17 +38,18 @@ const Popup = () => {
       headers: { "Content-type": "application/json" },
     }).then((res) => {
       if (res.status != 200) {
-        throw new Error("Bad server response");
+        throw new Error(res.text(Error));
       }
       return res.json();
-    }).then((res)=>console.log(res)).catch((error)=>console.error(error));
+    }).then((res)=>console.log(res)).catch((error)=> alert(error));
+    /*
     Swal.fire({
       position: 'top-center',
       icon: 'success',
       title: 'Login Cadastrado',
       showConfirmButton: false,
       timer: 1500
-    })
+    })*/
   
   }
 

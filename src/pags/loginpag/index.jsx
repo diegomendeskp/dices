@@ -31,7 +31,7 @@ const LoginPage = () => {
     })
       .then((res) => {
         if (res.status != 200) {
-          throw new Error("Bad server response");
+          throw new Error(alert("Usuario ou senha incorreto"));
         }
         return res.json();
       })
@@ -53,48 +53,54 @@ const LoginPage = () => {
   }
 
   return (
-    <div id="login">
-      <main className="container">
-        <h1 className="title">Arauto</h1>
+    <div className="master">
+      <div id="login">
+        <main className="container">
+          <h1 className="title">Arauto</h1>
 
-        <div className="card">
-          <div className="conteudo">
-            <form className="form">
-              <div className="field">
-                <label htmlFor="userName">Usuario</label>
-                <input
-                  type="text"
-                  name="userName"
-                  id="userName"
-                  value={userName}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
-              </div>
+          <div className="card">
+            <div className="conteudo">
+              <form className="form">
+                <div className="field">
+                  <label htmlFor="userName">Usuario</label>
+                  <input
+                    type="text"
+                    name="userName"
+                    id="userName"
+                    value={userName}
+                    onChange={(e) => setUsername(e.target.value)}
+                  />
+                </div>
 
-              <div className="field">
-                <label htmlFor="password">Senha</label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
+                <div className="field">
+                  <label htmlFor="password">Senha</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </div>
 
-              <div className="actions">
-                <button type="submit" onClick={handleSubmit} className="botao">
-                  Entrar
-                </button>
-                <button type="submit" onClick={openForm} className="botao">
-                  Cadastrar
-                </button>
-              </div>
-            </form>
+                <div className="actions">
+                  <button
+                    type="submit"
+                    onClick={handleSubmit}
+                    className="botao"
+                  >
+                    Entrar
+                  </button>
+                  <button type="submit" onClick={openForm} className="botao">
+                    Cadastrar
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      </main>
-      <Popup />;
+        </main>
+        <Popup />;
+      </div>
     </div>
   );
 };

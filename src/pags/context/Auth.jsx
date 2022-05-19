@@ -9,7 +9,10 @@ export const AuthProvider = ({ children }) => {
 
   /*const token = sessionStorage.token;*/
 
-  const logout = () => {};
+  const logout = () => {
+    sessionStorage.clear();
+    window.location.reload();
+  };
   const saveToken = (token) => {
     setToken(token);
     sessionStorage.setItem("token", token);

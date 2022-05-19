@@ -6,13 +6,12 @@
     box-sizing: border-box;
     
     user-select: none;
-    
+
+       
 
     
     }
-    .app{
-        background: #FFFFFF url("taverna.jpg") no-repeat right center fixed;
-    }
+   
     
     *::before,
     *::after {
@@ -49,6 +48,7 @@
             left: 50px;
             backgroud: linear-gradient(#ff0aad, #48ff57);
             clip-path: circle(20% at 70% 65%);
+            
             
             }
 
@@ -166,13 +166,14 @@
 }
 
 #login{
-    
+      
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     padding: 0 25rem;
+    background: #FFFFFF url("taverna.jpg") no-repeat right center fixed;
 
     
     
