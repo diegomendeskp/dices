@@ -6,8 +6,12 @@
     box-sizing: border-box;
     
     user-select: none;
+
+       
+
     
     }
+   
     
     *::before,
     *::after {
@@ -15,28 +19,36 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    }
-    
 
+    }
+   
+
+    .swal2-container {
+        font-family : -apple-system , BlinkMacSystemFont ,  "Segoe UI" , Roboto , Oxygen-Sans , Ubuntu , Cantarell ,  "Helvetica Neue" , ​​sans-serif;
+     }
+   
     .container{
         position: relative;
         height: 100%;
         display: grid;
         place-items: center;
+
+        
         }
 
     .container::before{
         top: -100px;
-        left: 50px;
-        backgroud: linear-gradient(rgb(4, 82, 14), rgb(0, 255, 21));
+        left: 500px;
+        backgroud: linear-gradient(rgb(253, 0, 0), rgb(0, 255, 21));
         clip-path: circle(20% at 25% 30%);
         }
 
         .container::after{
             top: 100px;
             left: 50px;
-            backgroud: linear-gradient(#156e09, #21f333);
+            backgroud: linear-gradient(#ff0aad, #48ff57);
             clip-path: circle(20% at 70% 65%);
+            
             
             }
 
@@ -135,8 +147,8 @@
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    min-height: 50vh;
-    padding: 0 2rem;
+    min-height: 100vh;
+    padding: 10 100rem;
    
    
    
@@ -154,13 +166,13 @@
 }
 
 #login{
-    
-    display: flex;
+      
+    display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 0 2rem;
+    padding: 0 25rem;
     background: #FFFFFF url("taverna.jpg") no-repeat right center fixed;
 
     
