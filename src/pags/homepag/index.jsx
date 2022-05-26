@@ -7,11 +7,11 @@ import { isExpired, decodeToken } from "react-jwt";
 import { AuthContext } from "../context/Auth";
 
 const token = sessionStorage.token;
+const playerName = sessionStorage.playerName;
 
 const HomePage = () => {
-  const { authenticated, token, logout } = useContext(AuthContext);
+  const { authenticated, token, logout, playerName } = useContext(AuthContext);
 
-  const [playerName, setPlayerName] = useState(null);
   const myDecodedToken = decodeToken(token);
   const isMyT = isExpired(token);
 
@@ -36,7 +36,7 @@ const HomePage = () => {
     <div className="main" id="main">
       <div className="uperBar">
         <div className="login">
-          <h2>Usuario</h2>
+          <h2>{playerName}</h2>
         </div>
         <div className="img">
           <h2>info</h2>
