@@ -1,168 +1,90 @@
-
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
     user-select: none;
+}
 
-       
-
-    
-    }
-   
-    
-    *::before,
-    *::after {
-   
+*::before,
+*::after {
     position: absolute;
     width: 100%;
     height: 100%;
-
     }
-   
 
-    .swal2-container {
-        font-family : -apple-system , BlinkMacSystemFont ,  "Segoe UI" , Roboto , Oxygen-Sans , Ubuntu , Cantarell ,  "Helvetica Neue" , ​​sans-serif;
+.swal2-container {
+    font-family : -apple-system , BlinkMacSystemFont ,  "Segoe UI" , Roboto , Oxygen-Sans , Ubuntu , Cantarell ,  "Helvetica Neue" , ​​sans-serif;
      }
    
-    .container{
-        position: relative;
-        height: 100%;
-        display: grid;
-        place-items: center;
-
-        
-        }
-
-    .container::before{
-        top: -100px;
-        left: 500px;
-        backgroud: linear-gradient(rgb(253, 0, 0), rgb(0, 255, 21));
-        clip-path: circle(20% at 25% 30%);
-        }
-
-        .container::after{
-            top: 100px;
-            left: 50px;
-            backgroud: linear-gradient(#ff0aad, #48ff57);
-            clip-path: circle(20% at 70% 65%);
-            
-            
-            }
-
-            .container .card{
-                position: relative;
-                display: grid;
-                place-items: center;
-                text-align: center;
-                z-index:1;
-                
-                box-shadow: 20px 20px 50px rgba(126, 123, 123, 0.5);
-                
-                border: 2px solid rgba(255, 253, 253, 0.219);
-                backgroud: rgb(21, 255, 0);
-                backdrop-filter: blur(3px);
-                overflow:hidden;
-                border-radius: 15px;
-            }
-
-            .container .card .conteudo {
-                font-size: 1.8em;
-                
-                }
-
-                .container .card .conteudo .botao{
-                    display: inline-block;
-                    padding: 8px 20px;
-                    margin-top: 15px;
-                    backgroud: rgb(41, 55, 75);
-                    color:#000;
-                    border-radius: 20px;
-                    text-decoration: none;
-                    font-weight: 500px;
-                    }
-
-/*------------------------------------------- */
-.container2{
-    position:relative;
-    height: -100%;
+.container{
+    position: relative;
+    height: 100%;
     display: grid;
     place-items: center;
-    
-    }
+}
 
-.container2::before{
+.container::before{
+    top: -100px;
+    left: 500px;
+    backgroud: linear-gradient(rgb(253, 0, 0), rgb(0, 255, 21));
+    clip-path: circle(20% at 25% 30%);
+}
+
+.container::after{
     top: 100px;
     left: 50px;
-    backgroud: linear-gradient(rgb(4, 82, 14), rgb(0, 255, 21));
-    clip-path: circle(20% at 25% 30%);
-    }
+    backgroud: linear-gradient(#ff0aad, #48ff57);
+    clip-path: circle(20% at 70% 65%);
+}
 
-    .container2::after{
-        top: 100px;
-        left: 50px;
-        backgroud: linear-gradient(#156e09, #21f333);
-        clip-path: circle(20% at 70% 65%);
-        
-        }
+.container .card{
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    z-index:1;         
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);           
+    border: 2px solid rgba(255, 253, 253, 0.219);
+    backgroud: rgb(21, 255, 0);
+    backdrop-filter: blur(3px);
+    overflow:hidden;
+    border-radius: 15px;
+}
 
-        .container2 .card2{
-            position: relative;
-            display: grid;
-            place-items: center;
-            text-align: center;
-            z-index:2;
-            
-            box-shadow: 20px 20px 50px rgba(151, 146, 146, 0.5);
-            
-            border: 2px solid rgba(255, 253, 253, 0.219);
-            backgroud: rgb(21, 255, 0);
-            backdrop-filter: blur(3px);
-            overflow:hidden;
-            border-radius: 15px;
-        }
+.container .card .conteudo {
+    font-size: 1.8em;
+}
 
-        .container2 .card2 .conteudo2 {
-            font-size: 1.8em;
-            
-            }
+.container .card .conteudo .botao{
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    backgroud: rgb(41, 55, 75);
+    color:#000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500px;
+}
 
-            .container2 .card2 .conteudo2 .botao{
-                display: inline-block;
-                padding: 8px 20px;
-                margin-top: 15px;
-                backgroud: rgb(41, 55, 75);
-                color:#000;
-                border-radius: 20px;
-                text-decoration: none;
-                font-weight: 500px;
-                }
  /*-------------------------------------------- */
  
-
  #cadastro{
-    display: none;
+    display: flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     min-height: 100vh;
-    padding: 10 100rem;
-   
-   
-   
-    
+    padding: 10 100rem;  
 }
+
 #cadastro .form-cadastro{
-    opacity: 0.8;
+    opacity: 0.7;
     filter: alpha(opacity=50);
     /*background-color: #2E8B57;*/
     width: 100%;
     max-width: 480px;
     padding: 0.5rem;
     border-radius: 15px;
-    
 }
 
 #login{
@@ -173,21 +95,16 @@
     justify-content: center;
     min-height: 100vh;
     padding: 0 25rem;
-    background: #FFFFFF url("taverna.jpg") no-repeat right center fixed;
-
-    
-    
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1400' height='800' preserveAspectRatio='none' viewBox='0 0 1400 800'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1018%26quot%3b)' fill='none'%3e%3crect width='1400' height='800' x='0' y='0' fill='url(%23SvgjsLinearGradient1019)'%3e%3c/rect%3e%3cpath d='M1218.1980313285276 734.184248755895L1348.429125955485 789.4640687124484 1403.7089459120384 659.232974085491 1273.477851285081 603.9531541289376z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M970.7628347536202 601.7274988499115L1171.4730451167604 569.9381245141255 1139.6836707809746 369.2279141509852 938.9734604178342 401.0172884867712z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1471.783807484486 688.6892889979371L1463.9184880577402 538.6100539235576 1313.839252983361 546.4753733503034 1321.7045724101067 696.5546084246828z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1086.5905015818253 345.7004484733765L963.980462029165 486.7471643828753 1105.0271779386637 609.3572039355356 1227.637217491324 468.3104880260368z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M883.9499586324839 656.6014897116273L935.355464571088 535.4977069298 814.2516817892606 484.09220099119597 762.8461758506566 605.1959837730233z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M147.481765188634 461.5819640168485L147.48176518863406 672.7281353339264 358.627936505712 672.7281353339263 358.6279365057119 461.5819640168484z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-174.5972425572133 516.87809320154L-18.02069854044717 696.9988027502775 162.10001100829032 540.4222587335114 5.523466991524202 360.3015491847739z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M442.62811649202445 498.7362123206874L289.3601752091321 681.3938319740928 472.01779486253747 834.6617732569852 625.2857361454298 652.0041536035798z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M399.4636373026454 184.6243357914804L478.7360848039907 380.8305284401935 674.9422774527038 301.5580809388482 595.6698299513585 105.3518882901351z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M319.1418672367381 506.46517701025306L112.68840892725294 520.9018091645478 127.12504108154772 727.355267474033 333.5784993910329 712.9186353197382z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M204.7308805302395 323.6396062072867L187.70229734205213 518.2772026901906 382.33989382495605 535.305785878378 399.36847701314343 340.66818939547403z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1204.6013409789675 488.0254126864843L1110.144399257914 317.6205790048142 939.739565576244 412.0775207258676 1034.1965072972973 582.4823544075377z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M767.1776799376729 435.3615229860908L936.238676295183 549.3946048950977 1050.2717582041898 380.33360853758757 881.2107618466798 266.3005266285807z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M283.70739772471285 570.1304586505734L89.42088328378105 487.66072614125414 6.951150774461837 681.9472405821859 201.23766521539363 764.4169730915052z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M213.44546681641026 510.85688528805554L304.93832914988565 405.60638697340437 199.68783083523448 314.113524639929 108.19496850175909 419.36402295458015z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M641.4155436234919 554.1977389193819L674.6135975734957 763.802002330482 884.2178609845957 730.6039483804782 851.019807034592 520.9996849693781z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M887.0671206928783 204.6592898031912L913.9953540389442 374.6774638794375 1084.0135281151904 347.7492305333716 1057.0852947691246 177.7310564571253z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M257.94324780216925-19.213995299653057L73.10199631449166 55.466717917560366 147.78270953170508 240.307969405238 332.6239610193827 165.62725618802455z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M206.53741633315772 496.6300211237211L96.64983589089675 320.7731318291949-79.20705340362949 430.66071227145585 30.68052703863148 606.5176015659821z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1182.6313996252209 804.88272681582L1248.554327973796 669.7206935745794 1113.3922947325555 603.7977652260042 1047.4693663839803 738.9597984672448z' fill='rgba(10%2c 83%2c 1%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1018'%3e%3crect width='1400' height='800' fill='white'%3e%3c/rect%3e%3c/mask%3e%3clinearGradient x1='10.71%25' y1='-18.75%25' x2='89.29%25' y2='118.75%25' gradientUnits='userSpaceOnUse' id='SvgjsLinearGradient1019'%3e%3cstop stop-color='rgba(47%2c 48%2c 50%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(145%2c 172%2c 207%2c 1)' offset='1'%3e%3c/stop%3e%3c/linearGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");    
 }
 
 #login .form{
     opacity: 0.7;
     filter: alpha(opacity=50);
-   /* background-color: #3CB371; */
     width: 100%;
     max-width: 480px;
     padding: 0.5rem;
     border-radius: 15px;
-    
 }
 .form:hover {
     
@@ -214,4 +131,50 @@
 }
 #login .botao{
     border-radius: 5px;
+}
+
+
+.master{
+    background-color: #282c34;
+  min-height: 100vh;
+  display: block;
+  font-size: calc(2px + 2vmin);
+  color: white;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.upBar{
+   
+    float: none;
+    position:absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: 100%;
+    height: 10%;
+    align-items:flex-start;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    column-gap: 50px;
+    row-gap: 2px;
+    backdrop-filter: blur(1px); 
+    background-color: rgba(0, 0, 0, 0.178);
+}
+
+.title{
+    display: flex;
+    margin-top: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.icon{
+width: 70px;
+color: #9c4113;
+font-size: 48px;
+}
+.icon2{
+    width: 70px;
+color: #9c4113;
+font-size: 40px;
 }

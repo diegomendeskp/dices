@@ -1,4 +1,8 @@
 import React, {useState, useEffect, useContext} from 'react'
+import "../loginpag/style.css";
+import { useNavigate } from "react-router-dom";
+import { FaDiceD20 } from "react-icons/fa";
+import { GiVerticalBanner } from "react-icons/gi";
 
 import  {SweetAlertIcon, SweetAlertOptions, SweetAlertResult } from 'sweetalert2'
 import { AuthContext } from '../context/Auth'
@@ -6,32 +10,26 @@ import Swal from 'sweetalert2/src/sweetalert2.js'
 import { useJwt } from "react-jwt";
 
 
-
-
-
 const Popup = () => {
-
-  const [userName, setUserName] = useState("");
+    const navigate = useNavigate();
+    const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
     const [playerName, setPlayerName] = useState("");
     const [confirmPassword, setConfirmpassword] = useState("");
    
+    function closeForm(e) {
+      e.preventDefault();
+      navigate("/", { replace: true });};
+
     const handleSubmit2 = (e) => {
       e.preventDefault();
         if (password != confirmPassword) {
-          
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Senha diferente',
           })
-    
         }else{
-         
-
-        
-   
-    
     fetch("https://murmuring-fortress-22740.herokuapp.com/users", {
       method: "POST",
       body: JSON.stringify({ userName: userName,playerName:playerName, password: password }),
@@ -50,50 +48,46 @@ const Popup = () => {
       showConfirmButton: false,
       timer: 1500
     })*/
-  
-  }
-
-  };
+  }};
 
 
-    function closeForm(e) {
-        e.preventDefault();
-      document.getElementById("cadastro").style.display = "none";
-      
-      
-    };
-
-    return (
-        
     
 
-    <div id='cadastro'>
-      <h1 className='title'>Cadastro</h1>
-      <main className="container2">
-        <div className="card2">
-          <div className="conteudo2">
-      <form className='form-cadastro'>
-      <div className='field'>
+    return (
+  <div className="master">
+          <div className="upBar">
+
+    <h1 className='title'>Cadastro<FaDiceD20 className="icon2"  /></h1>
+    </div>
+
+    <div id="login">
+      <div id='cadastro'>
+       
+        <main className="container">
+         <div className="card">
+            <div className="conteudo">
+             <form className='form-cadastro'>
+               <div className='field'>
                 <label htmlFor='userName'>Usuario</label>
                 <input type='text' name='userName' id='userName' value={userName} onChange={(e) => setUserName(e.target.value)} />
-            </div>
+                </div>
 
-            <div className='field'>
-                <label htmlFor='playerName'>Apelido</label>
-                <input type='text' name='playerName' id='playerName' value={playerName} onChange={(e) => setPlayerName(e.target.value)} />
-            </div>
+                  <div className='field'>
+                  <label htmlFor='playerName'>Apelido</label>
+                  <input type='text' name='playerName' id='playerName' value={playerName} onChange={(e) => setPlayerName(e.target.value)} />
+                  </div>
 
-            <div className='field'>
-                <label htmlFor='password'>Senha</label>
-                <input type='password' name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-            </div>
+                  <div className='field'>
+                  <label htmlFor='password'>Senha</label>
+                  <input type='password' name='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                  </div>
 
-            <div className='field'>
-                <label htmlFor='confirmPassword'>Confirmar Senha</label>
-                <input type='password' name='confirmPassword' id='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmpassword(e.target.value)} />
-            </div>
+                  <div className='field'>
+                  <label htmlFor='confirmPassword'>Confirmar Senha</label>
+                  <input type='password' name='confirmPassword' id='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmpassword(e.target.value)} />
+                  </div>
 
-            <div className='actions'>
+              <div className='actions'>
                 
                  <button type='submit' onClick={handleSubmit2} className='botao'>Cadastrar</button>
                  <button type='submit' onClick={closeForm} className='botao'>Cancelar</button>
@@ -105,7 +99,9 @@ const Popup = () => {
       </main>
 
     </div>
-       
+    
+  </div>
+</div>
     );
 }
 

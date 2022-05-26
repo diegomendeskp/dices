@@ -1,9 +1,6 @@
-
-
 .main{
     background: -webkit-linear-gradient(#A9A9A9, #000000);
     background: #FFFFFF url("stone.jpg") repeat   ;
-
     opacity: 0.8;
 }
 
@@ -19,6 +16,7 @@
     margin: 5px;
 
   }
+
   #card:hover {
     transform: translateY(-4px);
     cursor: pointer;
@@ -32,27 +30,27 @@
   }
 
 .uperBar{
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
     backdrop-filter: blur(3px);
     box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.22);
-
     border-color: #000000;
-
 }
+
 .img{
     display: flex;
     margin-top: auto;
     margin-bottom: auto; 
 }
+
 .login{
    /* background-color: #7AAE7C;*/
     margin-top: auto;
     margin-bottom: auto; 
 }
+
 .login:hover {
     transform: translateY(-1px);
     cursor: pointer;
@@ -63,12 +61,13 @@
     padding: 20px;
     opacity: 0.9;
     border-radius: 5px;
-
 }
+
 .button:hover {
     transform: translateY(-1px);
     cursor: pointer;
 }
+
 .lateralbar{
     display:flex;
     align-items: center;
@@ -78,13 +77,9 @@
     align-items: stretch;
     padding: 20px;
     box-shadow: 15px 15px 15px 15px rgba(0, 0, 0, 0.22);
-
-    
-
 }
-.header{
-    
 
+.header{
     display: flex;
     flex-direction:row;
     padding: 5px;
@@ -96,16 +91,16 @@
 h1, h2,  h3, h4{
     color: 	#d8d8d8;
 }
+
 .main h1{
     background: -webkit-linear-gradient(rgb(46, 46, 46), #020000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 1px rgb(0, 0, 0);
-
 }
+
 a{
     color: 	#6d0707;
-
 }
 
 .body{
@@ -113,12 +108,8 @@ a{
     background: -webkit-linear-gradient(#D3D3D3, #A9A9A9);
     opacity: 0.8;
     padding: auto;
-    
     flex-wrap: wrap;
     justify-content: center;
-
-    
-
 }
 
 .tables{
@@ -145,10 +136,6 @@ a{
     backdrop-filter: blur(5px);
     border-color: #000000;
     opacity: 0.7;
-
-
-    
-
     background-color: 	#3f3f3f	;
 }
 .table1, .table2{
@@ -167,8 +154,6 @@ a{
     border-color: #000000;
     opacity: 0.7;
     backdrop-filter: blur(5px);
-    
-
     background-color: 	#616161	;
 }
 
@@ -186,11 +171,9 @@ a{
     padding: 3%;
     width: 50%;
     border-radius: 0px 0px 25px 25px;
-
     box-shadow: 2px 2px 1px 2px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(8px);
     border-color: #000000;
     opacity: 0.7;
-
     background-color: 	#3f3f3f	;
 }

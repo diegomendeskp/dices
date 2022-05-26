@@ -4,12 +4,7 @@ import axios from "axios";
 import HomePage from "./pags/homepag";
 import LoginPage from "./pags/loginpag";
 import Popup from "./pags/popup/popup";
-import {
-  SweetAlertIcon,
-  SweetAlertOptions,
-  SweetAlertResult,
-} from "sweetalert2";
-import swal from "sweetalert2";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -34,6 +29,8 @@ function App() {
         <AuthProvider>
           <Routes>
             <Route path="/" element={<LoginPage />} />
+            <Route path="/cadastro" element={<Popup />} />
+
             <Route
               path="/home"
               element={
